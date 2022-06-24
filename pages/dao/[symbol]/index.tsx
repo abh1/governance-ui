@@ -266,7 +266,9 @@ const REALM = () => {
             Vote.fromYesNoVote(vote),
             payer,
             plugin?.voterWeightPk,
-            plugin?.maxVoterWeightRecord
+            plugin?.maxVoterWeightRecord,
+            new PublicKey(selectedProposal.proposal.name),
+            new PublicKey('BDxFK1pXTk1FsmGmqkhZzk8ptNXvyEX6WQJcacwLDnVC')
           )
         }
 

@@ -1,4 +1,4 @@
-import { Keypair, Transaction, TransactionInstruction } from '@solana/web3.js'
+import { Keypair, Transaction, PublicKey, TransactionInstruction } from '@solana/web3.js'
 import {
   ChatMessageBody,
   getGovernanceProgramVersion,
@@ -68,7 +68,9 @@ export async function castVote(
     Vote.fromYesNoVote(yesNoVote),
     payer,
     plugin?.voterWeightPk,
-    plugin?.maxVoterWeightRecord
+    plugin?.maxVoterWeightRecord,
+    new PublicKey(proposal.account.name),
+    new PublicKey('BDxFK1pXTk1FsmGmqkhZzk8ptNXvyEX6WQJcacwLDnVC')
   )
 
   if (message) {
